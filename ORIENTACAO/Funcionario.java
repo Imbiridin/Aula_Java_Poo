@@ -2,8 +2,8 @@ package ORIENTACAO;
 
 public class Funcionario {
 
-    public int registro;
-    public String nome;
+    private int registro;
+    private String nome;
     private int cargo;
     private double salario = 2000;
 
@@ -48,7 +48,7 @@ public class Funcionario {
     }
 
     public String toString() {
-        return "Seu salário é R$" + salario;
+        return "=".repeat(50)+"\nSr.(a): " + nome + ".\nNúmero de registro: "+ registro +".\nSeu salário é R$" + salario + "\n"+"=".repeat(50);
     }
 
 }

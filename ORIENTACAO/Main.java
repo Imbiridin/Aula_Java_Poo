@@ -9,15 +9,15 @@ public class Main {
 
         System.out.println("Informe o número do seu registro");
         fc.setRegistro(sc.nextInt());
+        sc.nextLine();
 
         System.out.println("Digite o seu nome: ");
         fc.setNome(sc.nextLine());
-        sc.nextLine();
-
+        
         boolean continua = true;
 
         while(continua){
-            System.out.println("Olá sr(a): " + fc.nome + "Digite [1] Número do seu cargo | [2] para verificar salário | [0] sair");
+            System.out.println("Olá sr(a): " + fc.getNome() + "\nDigite [1] Número do seu cargo | [2] para verificar salário | [0] sair");
             int opcao = sc.nextInt();
 
             switch(opcao){
@@ -41,5 +41,6 @@ public class Main {
             }
 
         }
+        sc.close();
     }
 }
