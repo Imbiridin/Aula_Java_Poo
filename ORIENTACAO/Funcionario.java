@@ -5,7 +5,8 @@ public class Funcionario {
     private int registro;
     private String nome;
     private int cargo;
-    private double salario = 2000;
+    private double salarioBase = 2000;
+    private double salario = salarioBase;
 
     public int getRegistro() {
         return registro;
@@ -24,12 +25,13 @@ public class Funcionario {
     }
 
     public void setSalario(double valor) {
+
         if (valor == 1) {
-            this.salario = salario + (salario * 0.20);
+            this.salario = salarioBase + (salarioBase * 0.20);
         } else if (valor == 2) {
-            salario = salario + (salario * 0.4);
+            salario = salarioBase + (salarioBase * 0.4);
         } else if (valor == 3) {
-            this.salario = salario + (salario * 0.6);
+            this.salario = salarioBase + (salarioBase * 0.6);
         } else {
             System.out.println("Não tem bonificação");
         }
