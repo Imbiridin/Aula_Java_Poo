@@ -1,0 +1,52 @@
+package CALCULADORA;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Operadores op = new Operadores();
+
+        boolean continuar = true;
+        while (continuar) {
+
+            String num_1T = JOptionPane.showInputDialog("Digite o primeiro número: ");
+            op.setNum1(Integer.parseInt(num_1T));
+
+            String num_2T = JOptionPane.showInputDialog("Digite o segundo número: ");
+            op.setNum2(Integer.parseInt(num_2T));
+
+            String opcaoT = JOptionPane.showInputDialog("=".repeat(50)
+                    + "\nCALCULADORA\n"
+                    + "=".repeat(50)
+                    + "\nDigite [1] SOMAR | [2] SUBTRAIR | [3] MULTIPLICAR | [4] DIVIDIR | [0] SAIR \n"
+                    + "=".repeat(50));
+
+            int opcao = Integer.parseInt(opcaoT);
+
+            switch (opcao) {
+                case 1:
+                    JOptionPane.showMessageDialog(null, "A Soma é: \n" + op.getNum1() + " + " + op.getNum2() + " = " + op.getSoma());
+                    break;
+
+                case 2:
+                    JOptionPane.showMessageDialog(null, "A Subtração é: \n" + op.getNum1() + " - " + op.getNum2() + " = " + op.getSubtracao());
+                    break;
+                case 3:
+                    JOptionPane.showMessageDialog(null, "A Multiplicação é: \n" + op.getNum1() + " * " + op.getNum2() + " = " + op.getMultiplicacao());
+                    break;
+                case 4:
+                    JOptionPane.showMessageDialog(null, "A Divisão é: \n" + op.getNum1() + " / " + op.getNum2() + " = " + op.getDivisao());
+                    break;
+                case 0:
+                    JOptionPane.showMessageDialog(null, "Obrigado por utilizar o meu programa!");
+                    continuar = false;
+                    break;
+
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção inválida!");
+
+            }
+        }
+    }
+}
