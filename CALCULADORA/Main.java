@@ -11,16 +11,21 @@ public class Main {
         while (continuar) {
             String opcaoT = JOptionPane.showInputDialog("=".repeat(50)
                     + "\nCALCULADORA\n"
-                    + "=".repeat(50)
-                    + "\nDigite [1] SOMAR | [2] SUBTRAIR | [3] MULTIPLICAR | [4] DIVIDIR | [0] SAIR \n"
-                    + "=".repeat(50));
+                    + "=".repeat(60)
+                    + "\nDigite:\n [1] SOMAR | [2] SUBTRAIR | [3] MULTIPLICAR | [4] DIVIDIR | [0] SAIR \n"
+                    + "=".repeat(60));
             int opcao = Integer.parseInt(opcaoT);
 
             if (opcao == 0) {
                 JOptionPane.showMessageDialog(null, "Obrigado por utilizar o meu programa!");
                 continuar = false;
                 break;
+            } else if (opcao >= 5) {
+                JOptionPane.showMessageDialog(null, "Opcção inválida. Tente novamente!");
+                continue;
             }
+
+
             String num_1T = JOptionPane.showInputDialog("Digite o primeiro número: ");
             op.setNum1(Integer.parseInt(num_1T));
 
