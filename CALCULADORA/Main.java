@@ -9,20 +9,23 @@ public class Main {
 
         boolean continuar = true;
         while (continuar) {
-
-            String num_1T = JOptionPane.showInputDialog("Digite o primeiro número: ");
-            op.setNum1(Integer.parseInt(num_1T));
-
-            String num_2T = JOptionPane.showInputDialog("Digite o segundo número: ");
-            op.setNum2(Integer.parseInt(num_2T));
-
             String opcaoT = JOptionPane.showInputDialog("=".repeat(50)
                     + "\nCALCULADORA\n"
                     + "=".repeat(50)
                     + "\nDigite [1] SOMAR | [2] SUBTRAIR | [3] MULTIPLICAR | [4] DIVIDIR | [0] SAIR \n"
                     + "=".repeat(50));
-
             int opcao = Integer.parseInt(opcaoT);
+
+            if (opcao == 0) {
+                JOptionPane.showMessageDialog(null, "Obrigado por utilizar o meu programa!");
+                continuar = false;
+                break;
+            }
+            String num_1T = JOptionPane.showInputDialog("Digite o primeiro número: ");
+            op.setNum1(Integer.parseInt(num_1T));
+
+            String num_2T = JOptionPane.showInputDialog("Digite o segundo número: ");
+            op.setNum2(Integer.parseInt(num_2T));
 
             switch (opcao) {
                 case 1:
@@ -37,10 +40,6 @@ public class Main {
                     break;
                 case 4:
                     JOptionPane.showMessageDialog(null, "A Divisão é: \n" + op.getNum1() + " / " + op.getNum2() + " = " + op.getDivisao());
-                    break;
-                case 0:
-                    JOptionPane.showMessageDialog(null, "Obrigado por utilizar o meu programa!");
-                    continuar = false;
                     break;
 
                 default:
